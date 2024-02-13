@@ -35,7 +35,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionConfig));
 
+const indexRouter = require('./src/routes/indexRouter');
 /// тут будут app.use
+app.use('/', indexRouter);
 
 app.get('/*', (req, res) => {
   res.redirect('/main');

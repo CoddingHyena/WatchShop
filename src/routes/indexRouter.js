@@ -4,10 +4,11 @@ const Home = require('../views/pages/Home');
 
 router.get('/', async (req, res) => {
   try {
-    const { login } = req.session;
-    renderTemplate(Home, { login }, res);
+    renderTemplate(Home, { }, res);
   } catch (error) {
     console.log(error);
     res.sendStatus(500);
   }
 });
+
+module.exports = router;

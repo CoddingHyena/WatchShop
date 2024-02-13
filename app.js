@@ -36,8 +36,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionConfig));
 
 const indexRouter = require('./src/routes/indexRouter');
+const adminRouter = require('./src/routes/adminRouter');
 /// тут будут app.use
 app.use('/', indexRouter);
+app.use('/admin', adminRouter);
 
 app.get('/*', (req, res) => {
   res.redirect('/main');

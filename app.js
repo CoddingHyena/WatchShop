@@ -41,9 +41,9 @@ const adminRouter = require('./src/routes/adminRouter');
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 
-app.get('/*', (req, res) => {
-  res.redirect('/main');
-});
+// app.get('/*', (req, res) => {
+//   res.redirect('/main');
+// });
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);

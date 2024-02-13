@@ -11,7 +11,7 @@ const path = require('path');
 
 /// тут будут ручки
 const { checkUser, secureRoute } = require('./src/middlewares/middlewares');
-                                        // у вас может быть другой путь к папке, проверьте
+// у вас может быть другой путь к папке, проверьте
 
 const { PORT } = process.env ?? 3100;
 
@@ -35,7 +35,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionConfig));
 
-
 /// тут будут app.use
 
 app.get('/*', (req, res) => {
@@ -45,5 +44,3 @@ app.get('/*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
 });
-
-// привет

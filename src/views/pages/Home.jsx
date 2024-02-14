@@ -52,7 +52,7 @@ module.exports = function Home() {
                     Артём, Андрей, Сергей - Буйволы 2024
                 </div>
                 <div>
-                    <a href="/"><button style={{backgroundColor: '#b5b5b5',  borderColor: 'transparent',}} type="button" className="btn btn-secondary btn-lg statsButton">Вход для админа</button></a>
+                    <a href="/admin/log"><button style={{backgroundColor: '#b5b5b5',  borderColor: 'transparent',}} type="button" className="btn btn-secondary btn-lg statsButton">Вход для админа</button></a>
                 </div>
             </div>
         </footer>

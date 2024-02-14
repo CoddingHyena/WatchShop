@@ -1,7 +1,6 @@
 const express = require('express');
 const React = require('react');
 const bcrypt = require('bcrypt');
-const { log } = require('console');
 const upload = require('../middlewares/filesForMulter');
 const { Watch } = require('../../db/models');
 
@@ -141,6 +140,16 @@ router.put('/updatewatch', async (req, res) => {
   } catch (error) {
     console.log(error);
     res.json({ err: 'Изменения не приняты!' });
+  }
+});
+
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    await Watch.destroy({ where: { id: req.params.id } });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
   }
 });
 

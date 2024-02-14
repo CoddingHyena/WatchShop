@@ -9,6 +9,9 @@ module.exports = function RegForm() {
       <div>
         <input type="password" placeholder="Пароль" className="input" name="password" />
       </div>
+      <div>
+        <input type="password" placeholder="Секретный пароль" className="input" name="secretPassword" />
+      </div>
       <button type="submit" className="login-button" >
         Зарегестрироваться
       </button>

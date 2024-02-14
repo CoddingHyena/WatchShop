@@ -1,7 +1,9 @@
 'use strict';
+
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Watch extends Model {
     /**
@@ -14,11 +16,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Watch.init({
+    name: DataTypes.STRING,
     seria: DataTypes.STRING,
     photo1: DataTypes.STRING,
     photo2: DataTypes.STRING,
     photo3: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Watch',

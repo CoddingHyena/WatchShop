@@ -1,6 +1,7 @@
 const RegForm = document.querySelector('#reg-form');
 const LoginForm = document.querySelector('#log-form');
 const AddForm = document.querySelector('#addForm');
+const UpdateForm = document.querySelector('#updateForm');
 
 RegForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -47,4 +48,36 @@ AddForm?.addEventListener('submit', async (e) => {
   const data = new FormData(AddForm);
   const res = Object.fromEntries(data);
   console.log(res, 'Я рес');
+  try {
+    const response = await fetch('/admin/addwatch', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(res),
+    });
+    const result = await response.json();
+  } catch (error) {
+    console.log(error, 'Ошибка в Application');
+  }
+});
+
+UpdateForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(UpdateForm);
+  const res = Object.fromEntries(data);
+  console.log(res);
+  try {
+    const response = await fetch('/admin/updatewatch', {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(res),
+    });
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.log(error, 'Ошибка в Application');
+  }
 });

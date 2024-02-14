@@ -99,4 +99,37 @@ router.post('/adminpage', upload.single('photo'), async (req, res) => {
   }
 });
 
+router.post('/addwatch', async (req, res) => {
+  const { name, description, seria } = req.body;
+  try {
+    const watch = await Watch.findOne({ where: { name } });
+    if (!watch) {
+      await Watch.create({ name, description, seria });
+      res.json({ msg: 'Часы добавлены' });
+    } else {
+      res.json({ err: 'Такие часы уже есть!' });
+    }
+  } catch (error) {
+    console.log(error);
+    res.json({ err: 'Часы не добавлены!' });
+  }
+});
+
+router.put('/updatewatch', async (req, res) => {
+  const {
+    oldname, name, description, seria,
+  } = req.body;
+  try {
+    const watch = await Watch.findOne({ where: { name: oldname } });
+    if (watch) {
+      await watch.update({ name, description, seria });
+      res.json({ msg: 'Изменения внесены' });
+    } else {
+      res.json({ err: 'Таких часов нет!' });
+    }
+  } catch (error) {
+    console.log(error);
+    res.json({ err: 'Изменения не приняты!' });
+  }
+});
 module.exports = router;

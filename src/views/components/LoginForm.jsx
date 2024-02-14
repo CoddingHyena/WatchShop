@@ -2,6 +2,7 @@ const React = require('react');
 
 module.exports = function LogForm() {
   return (
+    <div>
     <form action="submit" className="reg-log-form" id='log-form'>
       <div>
         <input type="text" placeholder="Логин" className="input" name="login" />
@@ -14,5 +15,11 @@ module.exports = function LogForm() {
       </button>
       <span className="regMsg" />
     </form>
+    <a href="/admin/reg">
+    <button>
+      Перейти к регистрации
+    </button>
+    </a>
+    </div>
   );
 };

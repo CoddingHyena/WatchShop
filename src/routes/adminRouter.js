@@ -77,21 +77,30 @@ router.get('/adminpage', async (req, res) => {
 
 router.post('/adminpage', upload.single('photo'), async (req, res) => {
   try {
-    if (req.file) {
-      const photo = req.file.originalname;
-      console.log('======================>', req.file.originalname);
-      // const { login } = req.session;
-      console.log(req.file);
-      const newWatch = await Watch.create({
-        image: photo,
-      });
-      if (newWatch) {
-        res.json({ msg: 'Успех!', id: newWatch.id });
+    const { name, description, seria } = req.body;
+    const watch = await Watch.findOne({ where: { name } });
+    if (!watch) {
+      if (req.file) {
+        const photo = req.file.originalname;
+        console.log('======================>', req.file.originalname);
+        // const { login } = req.session;
+        console.log(req.file);
+        const newWatch = await Watch.create({
+          image: photo,
+          name,
+          description,
+          seria,
+        });
+        if (newWatch) {
+          res.json({ msg: 'Успех!', id: newWatch.id });
+        } else {
+          res.json({ err: 'Не успех!' });
+        }
       } else {
-        res.json({ err: 'Не успех!' });
+        console.log('Вообще не успех, даже в ручку не зашли!');
       }
     } else {
-      console.log('Вообще не успех, даже в ручку не зашли!');
+      res.json({ err: 'Такие часы уже есть!' });
     }
   } catch (error) {
     console.log(error);
@@ -99,21 +108,21 @@ router.post('/adminpage', upload.single('photo'), async (req, res) => {
   }
 });
 
-router.post('/addwatch', async (req, res) => {
-  const { name, description, seria } = req.body;
-  try {
-    const watch = await Watch.findOne({ where: { name } });
-    if (!watch) {
-      await Watch.create({ name, description, seria });
-      res.json({ msg: 'Часы добавлены' });
-    } else {
-      res.json({ err: 'Такие часы уже есть!' });
-    }
-  } catch (error) {
-    console.log(error);
-    res.json({ err: 'Часы не добавлены!' });
-  }
-});
+// router.post('/addwatch', async (req, res) => {
+//   const { name, description, seria } = req.body;
+//   try {
+//     const watch = await Watch.findOne({ where: { name } });
+//     if (!watch) {
+//       await Watch.create({ name, description, seria });
+//       res.json({ msg: 'Часы добавлены' });
+//     } else {
+//       res.json({ err: 'Такие часы уже есть!' });
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     res.json({ err: 'Часы не добавлены!' });
+//   }
+// });
 
 router.put('/updatewatch', async (req, res) => {
   const {

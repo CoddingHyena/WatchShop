@@ -41,6 +41,15 @@ module.exports = function AdminLogRegPage() {
                       className="form-control"
                     />
                   </div>
+                  <div className='inputs'>
+                    <input type="text" name='name' placeholder='Название модели'/>
+                    <input type="text" name='description' placeholder='Описание модели' />
+                    <select name="seria">
+                      <option value="" disabled selected hidden>Серия</option>
+                      <option value="forHim">Для него</option>
+                      <option value="forHer">Для неё</option>
+                    </select>
+                  </div>
                   <button type="submit" className="btn btn-primary">
                     Разместить
                   </button>
@@ -50,21 +59,6 @@ module.exports = function AdminLogRegPage() {
           </div>
         </div>
         <div>
-          <form action="submit" id="addForm">
-            <div>Добавление новых часов</div>
-                  <div className='inputs'>
-                    <input type="text" name='name' placeholder='Название модели'/>
-                    <input type="text" name='description' placeholder='Описание модели' />
-                    <select name="seria">
-                      <option value="" disabled selected hidden>Серия</option>
-                      <option value="forHim">Для него</option>
-                      <option value="forHer">Для неё</option>
-                    </select>
-                    <button type='submit'>
-                      Добавить часы
-                    </button>
-                  </div>
-          </form>
           <form action="submit" id="updateForm">
             <div>Обновление данных</div>
                   <div className='inputs'>

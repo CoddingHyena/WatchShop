@@ -7,10 +7,15 @@ const router = express.Router();
 
 const renderTemplate = require('../lib/renderTemplate');
 
-const AdminLogRegPage = require('../views/pages/AdminLogRegPage');
+const AdminLogPage = require('../views/pages/AdminLogPage');
+const AdminRegPage = require('../views/pages/AdminRegPage');
 
-router.get('/login-register', async (req, res) => {
-  renderTemplate(AdminLogRegPage, { }, res);
+router.get('/log', async (req, res) => {
+  renderTemplate(AdminLogPage, { }, res);
+});
+
+router.get('/reg', async (req, res) => {
+  renderTemplate(AdminRegPage, { }, res);
 });
 
 router.post('/login-register', upload.single('photo'), async (req, res) => {

@@ -49,6 +49,25 @@ module.exports = function AdminLogRegPage() {
             </div>
           </div>
         </div>
+        <div>
+          <form action="submit" id="addForm">
+                  <div className='inputs'>
+                    <input type="text" name='name' placeholder='Название модели'/>
+                    <input type="text" name='description' placeholder='Описание модели' />
+                    <select name="seria">
+                      <option value="" disabled selected hidden>Серия</option>
+                      <option value="forHim">Для него</option>
+                      <option value="forHer">Для неё</option>
+                    </select>
+                    <button type='submit'>
+                      Добавить часы
+                    </button>
+                  </div>
+          </form>
+        </div>
+        <a href='/logout'>
+          <button >Выйти из профиля администратора</button>
+        </a>
     </Layout>
   );
 };

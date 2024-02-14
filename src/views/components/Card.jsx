@@ -2,7 +2,7 @@ const React = require('react');
 
 module.exports = function Card({id, name, seria, description}) {
   return (
-      <div id={id} >
+      <div id={id} className='cardd'>
       <link rel="stylesheet" href="/styles/card.css" />
       <script defer src='/js/card.js'/>
           <img style={{width: '250px', height: "300px", borderRadius: '10px 10px 10px 10px', border: '3px solid'}} src="/" alt="mainLogo" />
@@ -10,6 +10,7 @@ module.exports = function Card({id, name, seria, description}) {
           <h5 style={{margin:'20px', color:'black'}} >{name} </h5>
           <h4 style={{margin:'20px', color:'black'}} >{description}</h4>
           <button className='btn'>Обновить</button>
+          <button className='delet' style={{backgroundColor: 'white', borderColor: 'transparent'}}>Удалить</button>
           <div className='modal' id='modal' >
             <div className='modal-conteiner' >
            

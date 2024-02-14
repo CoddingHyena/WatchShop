@@ -9,6 +9,7 @@ module.exports = function Layout({
         <meta charSet="UTF-8" />
         <link rel="stylesheet" href="/styles/index.css" />
         <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/styles/modal.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
       </head>
@@ -21,7 +22,7 @@ module.exports = function Layout({
                 <div className='image' ></div>
                 <a style={{alignSelf: "center", fontSize: "25px", fontStyle: "italic", fontWeight: "bold", color: "white", WebkitTextStroke: "1px black"}} href='/' className="navbar-brand"><h2>Меню</h2></a>
                 <a style={{alignSelf: "center", fontSize: "25px", marginLeft: "645px", fontStyle: "italic", fontWeight: "bold", color: "white", WebkitTextStroke: "1px black"}} href='/' className="navbar-brand"><h2>WatchShop</h2></a>
-                <a href="/" ><button style={{marginLeft: "440px", backgroundColor: '#b5b5b5',  borderColor: 'transparent', WebkitTextStroke: "1px black"}} type="button" className="btn btn-secondary btn-lg"><h2>Обратная связь</h2></button></a>
+                <button style={{marginLeft: "440px", backgroundColor: '#b5b5b5',  borderColor: 'transparent', WebkitTextStroke: "1px black"}} type="button" className="btn btn-secondary btn-lg" id='feedbackButton'><h2>Обратная связь</h2></button>
             </div>
             </div>
         </nav>

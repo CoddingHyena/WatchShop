@@ -1,11 +1,13 @@
 const React = require('react');
 
 const Layout = require('./Layout');
+const Dialog = require('../components/Dialog');
 
 
 module.exports = function Home() {
   return (
     <Layout >
+      <Dialog/>
          <h3 style={{margin:'20px', color:'black', textAlign: "center"}} >Для него</h3>
         <div style={{ backgroundColor: "#b5b5b5", borderRadius: "10px", width: "60vw", maxHeight: "90vh", margin: "0 auto", padding: "20px", overflowY: "scroll"  }}>
         <table

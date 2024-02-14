@@ -72,7 +72,9 @@ router.post('/log', async (req, res) => {
 });
 
 router.get('/adminpage', async (req, res) => {
-  renderTemplate(AdminPage, { }, res);
+  const rawwatch = await Watch.findAll();
+  const watch = rawwatch.map((el) => el.get({ plain: true }));
+  renderTemplate(AdminPage, { watch }, res);
 });
 
 router.post('/adminpage', upload.single('photo'), async (req, res) => {
@@ -141,4 +143,5 @@ router.put('/updatewatch', async (req, res) => {
     res.json({ err: 'Изменения не приняты!' });
   }
 });
+
 module.exports = router;

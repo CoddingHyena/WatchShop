@@ -1,5 +1,3 @@
-
-
 const RegForm = document.querySelector('#reg-form');
 const LoginForm = document.querySelector('#log-form');
 const AddForm = document.querySelector('#addForm');
@@ -54,7 +52,9 @@ RegForm?.addEventListener('submit', async (e) => {
       body: JSON.stringify(res),
     });
     const result = await response.json();
-    console.log(result);
+    if (result.msg) {
+      window.location.href = '/admin/adminpage';
+    }
   } catch (error) {
     console.log(error, 'Ошибка в Application');
   }
@@ -74,7 +74,9 @@ LoginForm?.addEventListener('submit', async (e) => {
       body: JSON.stringify(res),
     });
     const result = await response.json();
-    console.log(result);
+    if (result.msg) {
+      window.location.href = '/admin/adminpage';
+    }
   } catch (error) {
     console.log(error, 'Ошибка в Application');
   }

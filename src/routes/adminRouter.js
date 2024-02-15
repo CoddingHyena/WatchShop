@@ -82,12 +82,11 @@ router.post('/adminpage', upload.single('photo'), async (req, res) => {
     const watch = await Watch.findOne({ where: { name } });
     if (!watch) {
       if (req.file) {
-        const photo = req.file.originalname;
         console.log('======================>', req.file.originalname);
         // const { login } = req.session;
         console.log(req.file);
         const newWatch = await Watch.create({
-          image: photo,
+          photo1: `http://localhost:3000/uploads/${req.file.filename}`,
           name,
           description,
           seria,

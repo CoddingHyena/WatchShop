@@ -82,24 +82,24 @@ LoginForm?.addEventListener('submit', async (e) => {
   }
 });
 
-AddForm?.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const data = new FormData(AddForm);
-  const res = Object.fromEntries(data);
-  console.log(res, 'Я рес');
-  try {
-    const response = await fetch('/admin/addwatch', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(res),
-    });
-    const result = await response.json();
-  } catch (error) {
-    console.log(error, 'Ошибка в Application');
-  }
-});
+// AddForm?.addEventListener('submit', async (e) => {
+//   e.preventDefault();
+//   const data = new FormData(AddForm);
+//   const res = Object.fromEntries(data);
+//   console.log(res, 'Я рес');
+//   try {
+//     const response = await fetch('/admin/addwatch', {
+//       method: 'POST',
+//       headers: {
+//         'Content-type': 'application/json',
+//       },
+//       body: JSON.stringify(res),
+//     });
+//     const result = await response.json();
+//   } catch (error) {
+//     console.log(error, 'Ошибка в Application');
+//   }
+// });
 
 UpdateForm?.addEventListener('submit', async (e) => {
   e.preventDefault();

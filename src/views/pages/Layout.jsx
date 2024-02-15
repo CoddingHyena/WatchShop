@@ -9,7 +9,6 @@ module.exports = function Layout({
         <meta charSet="UTF-8" />
         <link rel="stylesheet" href="/styles/index.css" />
         <link rel="stylesheet" href="/styles/normalize.css" />
-        <link rel="stylesheet" href="/styles/modal.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
       </head>

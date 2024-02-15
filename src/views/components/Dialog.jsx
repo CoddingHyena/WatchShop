@@ -3,6 +3,7 @@ const React = require('react');
 module.exports = function CardList({watch}) {
   return (
     <dialog id='modal'>
+      <link rel="stylesheet" href="/styles/modal.css" />
         <form action="submit" id='feedbackForm'>
             <input type="text" placeholder='Имя'name='login' className='dialogInput' />
             <input type="email" placeholder='Почтовый адрес' name='email' className='dialogInput'/>

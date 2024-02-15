@@ -1,13 +1,13 @@
-const modal = document.getElementById('modal');
+const modala = document.getElementById('modal');
 const cardList = document.querySelector('.cardList');
 const delet = document.querySelector('.delet');
 
 function openModal() {
-  modal.style.display = 'flex';
+  modala.style.display = 'flex';
 }
 
 function closeModal() {
-  modal.style.display = 'none';
+  modala.style.display = 'none';
 }
 
 cardList?.addEventListener('click', async (e) => {
@@ -18,7 +18,7 @@ cardList?.addEventListener('click', async (e) => {
 });
 
 window.onclick = function (e) {
-  if (e.target === modal) {
+  if (e.target === modala) {
     closeModal();
   }
 };

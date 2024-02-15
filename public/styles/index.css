@@ -25,3 +25,11 @@ footer {
     align-items: center;
     align-self: center;
   }
+
+  body {
+    background-image: url(../media/1679272100_bogatyr-club-p-fon-dlya-chasov-smart-foni-oboi-1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    
+}

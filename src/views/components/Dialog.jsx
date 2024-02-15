@@ -4,6 +4,7 @@ module.exports = function CardList({watch}) {
   return (
     <dialog id='modal'>
       <link rel="stylesheet" href="/styles/modal.css" />
+      <script defer src='/js/application.js'/>
         <form action="submit" id='feedbackForm'>
             <input type="text" placeholder='Имя'name='login' className='dialogInput' />
             <input type="email" placeholder='Почтовый адрес' name='email' className='dialogInput'/>

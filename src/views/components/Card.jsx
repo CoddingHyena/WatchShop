@@ -13,7 +13,7 @@ module.exports = function Card({id, name, seria, description}) {
           <button className='btn'>Обновить</button>
           <button className='delet' style={{backgroundColor: "#b5b5b5", borderColor: 'transparent'}}>Удалить</button>
           </div>
-          <div className='modal' id='modal' >
+          <div className='modal' id='modalAS' >
             <div className='modal-conteiner' >
            
           <form action="submit" id="updateForm">

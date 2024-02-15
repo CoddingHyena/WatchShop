@@ -25,3 +25,12 @@
     animation-duration: 0.4s;
     animation-timing-function:cubic-bezier(0.16, 0.96, 0.3, 1.18);
 } */
+
+@keyframes showModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}

@@ -1,7 +1,9 @@
 'use strict';
+
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Admin extends Model {
     /**
@@ -15,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Admin.init({
     login: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Admin',

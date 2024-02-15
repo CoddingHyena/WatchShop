@@ -37,13 +37,15 @@ app.use(session(sessionConfig));
 
 const indexRouter = require('./src/routes/indexRouter');
 const adminRouter = require('./src/routes/adminRouter');
+const userRouter = require('./src/routes/userRouter');
 /// тут будут app.use
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
+app.use('/user', userRouter);
 
-app.get('/*', (req, res) => {
-  res.redirect('/main');
-});
+// app.get('/*', (req, res) => {
+//   res.redirect('/main');
+// });
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);

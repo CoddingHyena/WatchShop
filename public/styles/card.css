@@ -1,0 +1,40 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecececcf;
+    animation-name: showModal;
+    animation-duration: 0.4s;
+}
+
+.modal-conteiner {
+    background-color: white;
+    padding: 100px;
+    animation-name: showModalConteiner;
+    animation-duration: 0.4s;
+    animation-timing-function:cubic-bezier(0.16, 0.96, 0.3, 1.18);
+}
+
+
+@keyframes showModal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes showModalConteiner {
+    from {
+       margin-bottom: -1000px
+    }
+    to {
+        margin-bottom: 0
+    }
+}

@@ -125,10 +125,11 @@ router.post('/adminpage', upload.single('photo'), async (req, res) => {
 //   }
 // });
 
-router.put('/updatewatch', async (req, res) => {
+router.put('/page', async (req, res) => {
   const {
     oldname, name, description, seria,
   } = req.body;
+  console.log(name, 'реек бади');
   try {
     const watch = await Watch.findOne({ where: { name: oldname } });
     if (watch) {

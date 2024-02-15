@@ -1,13 +1,13 @@
-const modalAS = document.getElementById('modalAS');
+const modalD = document.querySelector('.modal');
 const cardList = document.querySelector('.cardList');
 const delet = document.querySelector('.delet');
 
 function openModal() {
-  modalAS.style.display = 'flex';
+  modalD.style.display = 'flex';
 }
 
 function closeModal() {
-  modalAS.style.display = 'none';
+  modalD.style.display = 'none';
 }
 
 cardList?.addEventListener('click', async (e) => {
@@ -18,17 +18,14 @@ cardList?.addEventListener('click', async (e) => {
 });
 
 window.onclick = function (e) {
-  if (e.target === modalAS) {
+  if (e.target === modalD) {
     closeModal();
   }
 };
 
 cardList?.addEventListener('click', async (e) => {
-  e.preventDefault();
   if (e.target.classList.contains('delet')) {
-    // e.target.classList.value.includes('delet');
-    const { id } = e.target.parentNode;
-    console.log(id);
+    const { id } = e.target.parentNode.parentNode;
     const response = await fetch(`/admin/delete/${id}`, {
       method: 'DELETE',
     });
@@ -37,3 +34,4 @@ cardList?.addEventListener('click', async (e) => {
     }
   }
 });
+

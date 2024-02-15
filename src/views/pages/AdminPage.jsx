@@ -58,6 +58,25 @@ module.exports = function AdminLogRegPage({watch}) {
               </div>
             </div>
           </div>
+                <div>
+          <form action="submit" id="updateForm">
+            <div style={{color: 'white'}} >Обновление данных</div>
+                  <div className='inputs'>
+                    <input type="text" name='oldname' placeholder='Старое название модели'/>
+                    <input type="text" name='name' placeholder='Новое название модели'/>
+
+                    <input type="text" name='description' placeholder='Описание модели' />
+                    <select name="seria">
+                      <option value="" disabled selected hidden>Серия</option>
+                      <option value="forHim">Для него</option>
+                      <option value="forHer">Для неё</option>
+                    </select>
+                    <button type='submit'>
+                      Добавить часы
+                    </button>
+                  </div>
+          </form>
+        </div>
         </div>
         <a href='/logout'>
           <button >Выйти из профиля администратора</button>

@@ -1,3 +1,5 @@
+
+
 const RegForm = document.querySelector('#reg-form');
 const LoginForm = document.querySelector('#log-form');
 const AddForm = document.querySelector('#addForm');
@@ -103,7 +105,7 @@ UpdateForm?.addEventListener('submit', async (e) => {
   const res = Object.fromEntries(data);
   console.log(res);
   try {
-    const response = await fetch('/admin/updatewatch', {
+    const response = await fetch('/admin/page', {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',

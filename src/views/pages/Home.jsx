@@ -15,7 +15,7 @@ module.exports = function Home({watchM, watchW}) {
           className="table table-striped"
           style={{ textAlign: "center"}}
              > 
-              {watchM.map((el) => <HomeCardm id={el.id} name={el.name} seria={el.seria} description={el.description} photo1={el.photo1} /> )}
+              {watchM.map((el) => <HomeCardm id={el.id} name={el.name} seria={el.seria} description={el.description} photo1={el.photo1} photo2={el.photo2} photo3={el.photo3}/> )}
               {/* <h3 style={{margin:'20px', color:'black', textAlign: "center"}} >{name}</h3>
               <h4 style={{margin:'20px', color:'black', textAlign: "center"}} >{description}</h4> */}
              </table>
@@ -25,7 +25,7 @@ module.exports = function Home({watchM, watchW}) {
           className="table table-striped"
           style={{ textAlign: "center"}}
         >
-         {watchW.map((el) => <HomeCardw id={el.id} name={el.name} seria={el.seria} description={el.description} photo1={el.photo1} /> )}
+         {watchW.map((el) => <HomeCardw id={el.id} name={el.name} seria={el.seria} description={el.description} photo1={el.photo1} photo2={el.photo2} photo3={el.photo3}/> )}
               {/* <h3 style={{margin:'20px', color:'black', textAlign: "center"}} >Название</h3>
               <h4 style={{margin:'20px', color:'black', textAlign: "center"}} >Описание</h4> */}
         </table>
